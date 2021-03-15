@@ -32,3 +32,45 @@ aws s3 \
 s3_bucket="arn:aws:s3:::upgrad-vivek"
 cp /tmp/${myname}-httpd-logs-${timestamp}.tar \
 s3://${s3_bucket}/${myname}-httpd-logs-${timestamp}.tar
+
+#Task 3 update
+#create inventory.html
+cd /var/www/html/
+
+touch inventory.html
+cat > inventory.html <<EOF
+<html>
+ <head>
+ </head>
+ <body>
+    <div class="row">
+        <div class="column left">
+            <h2>Log Type</h2>
+            <p>Data..</p>
+        </div>
+        <div class="Column middle">
+            <h2>Time Created</h2>
+            <p>Data..</p>
+        </div>
+        <div class="column middle"
+            <h2>Type</h2>
+            <p>Data..</p>
+        </div>
+        <div class="colum right"
+            <h2>Size</h2>
+            <p>Data..</p>
+        </div>
+    </div>
+ </body>
+</html>
+
+EOF
+
+#create cron job to run everyday at 3 am
+cd /etc/cron.d/
+
+cat>automation<< EOF
+
+#output
+0 3 * * * /root/Automation_Project/automation.sh
+EOF
